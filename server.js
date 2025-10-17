@@ -1,9 +1,11 @@
 require("dotenv").config()
+const cors = require("cors")
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express()
 
 const movieRoute = require("./router/movie.route")
+app.use(cors())
 app.use(express.json())
 app.use("/", movieRoute)
 const PORT = 3100 
